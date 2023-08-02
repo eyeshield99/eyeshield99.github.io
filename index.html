@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css"> <!-- Custom CSS for sidebar styling -->
+  <title>Wincove</title>
+</head>
+<body>
+<div class="container-fluid first-page overflow-hidden">
+  
+  <div class="row">        
+     <div class="col-12 top-bar">
+
+      <span class="logo-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" width="175" height="80" viewBox="0 0 175 80" fill="none">
+          <path d="M0 60.8453H3.53807L7.97931 74.6937L12.5549 60.7929H15.3242L19.8998 74.6937L24.341 60.8453H27.7746L21.3105 79.6566H18.4666L13.891 66.2349L9.31542 79.6566H6.49392L0 60.8453Z" fill="white"/>
+          <path d="M37.9782 60.8453H41.2476V79.5294H37.9782V60.8453Z" fill="white"/>
+          <path d="M52.8844 60.8453H55.9149L65.8946 73.7654V60.8453H69.1117V79.5294H66.3724L56.1015 66.2424V79.5294H52.8844V60.8453Z" fill="white"/>
+          <path d="M79.7409 70.2397V70.1873C79.7409 64.88 83.7044 60.5234 89.3474 60.5234C92.781 60.5234 94.856 61.7211 96.64 63.4353L94.5351 65.8607C93.0422 64.4758 91.4449 63.5401 89.3176 63.5401C85.7795 63.5401 83.1745 66.4745 83.1745 70.1349V70.1873C83.1745 73.8403 85.7571 76.8046 89.3176 76.8046C91.6091 76.8046 93.0721 75.8988 94.6694 74.4017L96.7744 76.5351C94.8336 78.5637 92.7063 79.8438 89.2205 79.8438C83.794 79.8438 79.7483 75.5994 79.7483 70.2397H79.7409Z" fill="white"/>
+          <path d="M105.508 70.2397V70.1873C105.508 64.9324 109.553 60.5234 115.271 60.5234C120.988 60.5234 124.982 64.8726 124.982 70.1274V70.1798C124.982 75.4347 120.936 79.8438 115.219 79.8438C109.501 79.8438 105.508 75.4946 105.508 70.2397ZM121.556 70.2397V70.1873C121.556 66.5568 118.921 63.5401 115.226 63.5401C111.531 63.5401 108.949 66.5044 108.949 70.1349V70.1873C108.949 73.8178 111.583 76.8046 115.278 76.8046C118.973 76.8046 121.556 73.8702 121.556 70.2397Z" fill="white"/>
+          <path d="M132.842 60.8453H136.462L142.075 75.2027L147.666 60.8453H151.204L143.486 79.6566H140.582L132.842 60.8453Z" fill="white"/>
+          <path d="M161.057 60.8453H174.866V63.7797H164.326V68.6378H173.664V71.5722H164.326V76.5875H175V79.5219H161.057V60.8378V60.8453Z" fill="white"/>
+          <path d="M67.8578 28.1781C66.2903 28.5599 65.7827 36.0081 67.4621 42.9847C69.1416 49.9612 74.2397 49.8864 78.5242 47.491C79.2408 47.0943 73.4784 46.3382 71.7914 39.3616C70.112 32.3851 69.4178 27.8039 67.8503 28.1781H67.8578Z" fill="white"/>
+          <path d="M76.2551 16.2985C73.8814 16.8749 72.8663 27.5044 76.1954 37.857C79.6439 48.5839 87.9964 44.8336 91.0717 42.6104C92.4675 41.5998 88.2128 44.0326 84.8017 35.776C80.6441 25.7304 78.6362 15.7221 76.2625 16.2985H76.2551Z" fill="white"/>
+          <path d="M87.9292 0.032299C84.6748 0.818287 83.2939 15.3703 87.8471 29.5405C92.5645 44.2198 104 39.0847 108.202 36.038C110.106 34.6607 104.291 37.9768 99.6183 26.681C93.938 12.9375 91.1836 -0.753689 87.9292 0.032299Z" fill="white"/>
+        </svg>
+      </span>
+
+      <button type="button" class="btn login-button fixed-top"><span class="login-text">Investor Login</span></button>
+        <span class="search-icon fixed-top">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M13.3294 3.11522C16.1494 5.93552 16.1494 10.5089 13.3294 13.3292C10.5094 16.1495 5.93652 16.1495 3.11651 13.3292C0.294495 10.5089 0.294495 5.93552 3.11651 3.11522C5.93652 0.294926 10.5094 0.294926 13.3294 3.11522V3.11522Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+            <path d="M21 21L13.7778 13.7778" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+          </svg>
+        </span>
+
+     </div>
+    
+  </div>
+  
+  <div class="row container overflow-hidden">
+      <div class="col align-self-start sidebar d-flex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="12" viewBox="0 0 25 12" fill="none">
+        <line y1="11" x2="25" y2="11" stroke="white" stroke-width="2"/>
+        <line y1="1" x2="25" y2="1" stroke="white" stroke-width="2"/>
+      </svg>
+    </div>
+
+    
+    <div class="col landing position-absolute">  
+        <p class="landing-text">Creating long-term partnerships and capital appreciation</p>
+        <button type="button" class="learn-more"><span class="learn-more-text justify-content-center">Learn More</span></button>
+    </div>
+    
+
+   
+  </div>
+  
+  <div class="row bottom-first">
+    <div class="col align-self-start d-flex linkedin">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3.60001 16H0.199997V5.3H3.60001V16ZM1.9 3.8C0.800002 3.8 0 3 0 1.9C0 0.8 0.900002 0 1.9 0C3 0 3.8 0.8 3.8 1.9C3.8 3 3 3.8 1.9 3.8ZM16 16H12.6V10.2C12.6 8.5 11.9 8 10.9 8C9.89999 8 8.89999 8.8 8.89999 10.3V16H5.5V5.3H8.7V6.8C9 6.1 10.2 5 11.9 5C13.8 5 15.8 6.1 15.8 9.4V16H16Z" fill="white"/>
+      </svg>
+    </div> 
+
+    <div class="col align-self-start d-flex arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="22" viewBox="0 0 16 22" fill="none">
+        <path d="M1 14L8 20L15 14" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+        <path d="M8 20V0" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+      </svg>
+    </div> 
+  </div>
+</div>
+
+
+
+<div class="container-fluid second-page">
+<div class="row">
+  <div class="col-1 side-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="43" height="49" viewBox="0 0 43 49" fill="none">
+      <path d="M1.43861 28.0979C-0.128893 28.4786 -0.636472 35.9055 1.04299 42.8622C2.72245 49.8189 7.82055 49.7443 12.105 47.3557C12.8216 46.9601 7.0592 46.2062 5.37228 39.2495C3.69281 32.2928 2.99863 27.7247 1.43114 28.0979H1.43861Z" fill="#6580B7"/>
+      <path d="M9.83592 16.2521C7.46228 16.8268 6.44713 27.4261 9.7762 37.7492C13.2247 48.4455 21.5772 44.7059 24.6525 42.489C26.0483 41.4813 21.7937 43.9072 18.3825 35.6741C14.2249 25.6571 12.217 15.6773 9.84338 16.2521H9.83592Z" fill="#6580B7"/>
+      <path d="M21.51 0.032207C18.2556 0.815956 16.8747 15.3265 21.4279 29.4564C26.1454 44.0938 37.5806 38.9733 41.783 35.9354C43.6864 34.562 37.8717 37.8686 33.1991 26.605C27.5188 12.9006 24.7645 -0.751542 21.51 0.032207Z" fill="#3E5A9B"/>
+    </svg>
+  </div>
+  
+</div>
+
+<div class="row">
+  <div class="col-1 align-self-start sidebar d-flex">
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="12" viewBox="0 0 25 12" fill="none">
+      <line y1="11" x2="25" y2="11" stroke="#1E2A58" stroke-width="2"/>
+      <line y1="1" x2="25" y2="1" stroke="#1E2A58" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <div class="col-4 second-group-text">  
+      <p>
+        <span class="second-group-text1">We are a partnership of experienced specialists</span>
+        <br><br>
+        <span class="second-group-text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea velit esse cillum dolore eu amet commodo consequat.</span>
+      </p>
+
+      <button class="second-page-button">
+        <span class="second-page-button-text">Meet Our Team</span>
+      </button>
+  </div>
+
+  <div class="col-6 second-page-image"> 
+  </div>
+
+  <div class="row bottom-second">
+    <div class="col align-self-start d-flex linkedin-second">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3.60001 16H0.199997V5.3H3.60001V16ZM1.9 3.8C0.800002 3.8 0 3 0 1.9C0 0.8 0.900002 0 1.9 0C3 0 3.8 0.8 3.8 1.9C3.8 3 3 3.8 1.9 3.8ZM16 16H12.6V10.2C12.6 8.5 11.9 8 10.9 8C9.89999 8 8.89999 8.8 8.89999 10.3V16H5.5V5.3H8.7V6.8C9 6.1 10.2 5 11.9 5C13.8 5 15.8 6.1 15.8 9.4V16H16Z" fill="#6B6B6B"/>
+      </svg>
+    </div>  
+  </div>
+    
+</div>
+
+
+
+</div>
+
+<div class="container-fluid third-page">
+  <div class="row">
+    <div class="col-1 side-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="43" height="49" viewBox="0 0 43 49" fill="none">
+        <path d="M1.43861 28.0979C-0.128893 28.4786 -0.636472 35.9055 1.04299 42.8622C2.72245 49.8189 7.82055 49.7443 12.105 47.3557C12.8216 46.9601 7.0592 46.2062 5.37228 39.2495C3.69281 32.2928 2.99863 27.7247 1.43114 28.0979H1.43861Z" fill="#6580B7"/>
+        <path d="M9.83592 16.2521C7.46228 16.8268 6.44713 27.4261 9.7762 37.7492C13.2247 48.4455 21.5772 44.7059 24.6525 42.489C26.0483 41.4813 21.7937 43.9072 18.3825 35.6741C14.2249 25.6571 12.217 15.6773 9.84338 16.2521H9.83592Z" fill="#6580B7"/>
+        <path d="M21.51 0.032207C18.2556 0.815956 16.8747 15.3265 21.4279 29.4564C26.1454 44.0938 37.5806 38.9733 41.783 35.9354C43.6864 34.562 37.8717 37.8686 33.1991 26.605C27.5188 12.9006 24.7645 -0.751542 21.51 0.032207Z" fill="#3E5A9B"/>
+      </svg>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <h2 class="third-page-heading">Our Investments</h2>
+
+  </div>
+
+  <div class="row">
+    <div class="col-1">
+
+    </div>
+
+    <div class="col investors-group">
+      <img src="images/investor1.png" alt="" class="investor-1">
+      <img src="images/investor2.png" alt="" class="investor-2">
+      <img src="images/investor3.png" alt="" class="investor-3">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-1 sidebar2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="12" viewBox="0 0 25 12" fill="none">
+        <line y1="11" x2="25" y2="11" stroke="#1E2A58" stroke-width="2"/>
+        <line y1="1" x2="25" y2="1" stroke="#1E2A58" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <div class="col investors-group">
+      <img src="images/investor1.png" alt="" class="investor-1v2">
+      <img src="images/investor2.png" alt="" class="investor-2v2">
+      <img src="images/investor3.png" alt="" class="investor-3v2">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-1">
+
+    </div>
+
+    <div class="col investors-group">
+      <img src="images/investor1.png" alt="" class="investor-1">
+      <img src="images/investor2.png" alt="" class="investor-2">
+      <img src="images/investor3.png" alt="" class="investor-3">
+    </div>
+  </div>
+
+  <div class="row">
+    <button class="view-investment-button">
+      <span class="view-investment-button-text">View All Investments</span>
+    </button>
+  </div>
+
+  <div class="row bottom-third">
+    <div class="col align-self-start d-flex linkedin-second">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3.60001 16H0.199997V5.3H3.60001V16ZM1.9 3.8C0.800002 3.8 0 3 0 1.9C0 0.8 0.900002 0 1.9 0C3 0 3.8 0.8 3.8 1.9C3.8 3 3 3.8 1.9 3.8ZM16 16H12.6V10.2C12.6 8.5 11.9 8 10.9 8C9.89999 8 8.89999 8.8 8.89999 10.3V16H5.5V5.3H8.7V6.8C9 6.1 10.2 5 11.9 5C13.8 5 15.8 6.1 15.8 9.4V16H16Z" fill="#6B6B6B"/>
+      </svg>
+    </div>  
+  </div>
+
+</div>
+
+<div class="container-fluid fourth-page">
+  <div class="row">
+    <div class="col-1 side-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="43" height="49" viewBox="0 0 43 49" fill="none">
+        <path d="M1.43861 28.0979C-0.128893 28.4786 -0.636472 35.9055 1.04299 42.8622C2.72245 49.8189 7.82055 49.7443 12.105 47.3557C12.8216 46.9601 7.0592 46.2062 5.37228 39.2495C3.69281 32.2928 2.99863 27.7247 1.43114 28.0979H1.43861Z" fill="#6580B7"/>
+        <path d="M9.83592 16.2521C7.46228 16.8268 6.44713 27.4261 9.7762 37.7492C13.2247 48.4455 21.5772 44.7059 24.6525 42.489C26.0483 41.4813 21.7937 43.9072 18.3825 35.6741C14.2249 25.6571 12.217 15.6773 9.84338 16.2521H9.83592Z" fill="#6580B7"/>
+        <path d="M21.51 0.032207C18.2556 0.815956 16.8747 15.3265 21.4279 29.4564C26.1454 44.0938 37.5806 38.9733 41.783 35.9354C43.6864 34.562 37.8717 37.8686 33.1991 26.605C27.5188 12.9006 24.7645 -0.751542 21.51 0.032207Z" fill="#3E5A9B"/>
+      </svg>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <h2 class="fourth-page-heading">Latest News</h2>
+    <button class="view-all-news-button">
+      <span class="view-all-news-button-text">View All News</span>
+    </button>
+  </div>
+
+  <div class="row">
+    <p class="news-1">
+      <span class="news-1-text1">NEWS • September 26th, 2022</span>
+      <br>
+      <span class="news-1-text2">Purgo Holdings, LLC (“Purgo”), a portfolio company of Wincove Private Holdings, LP, announces the acquisition of Superior Manufacturing, LLC (“Superior”)</span>
+    </p>
+    <p class="readmore">Readmore</p>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+    </div>
+
+    <div class="col-7">
+      <hr>
+    </div>
+    
+  </div>
+  
+  <div class="row">
+    <div class="col-1 sidebar3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="12" viewBox="0 0 25 12" fill="none">
+        <line y1="11" x2="25" y2="11" stroke="#1E2A58" stroke-width="2"/>
+        <line y1="1" x2="25" y2="1" stroke="#1E2A58" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <div class="row">
+      <p class="news-1">
+        <span class="news-1-text1">PRESS RELEASE</span>
+        <br>
+        <span class="news-1-text2">Purgo Holdings, LLC (“Purgo”) announces the acquisition of Air and Liquid Systems, LLC (“ALSI”)</span>
+      </p>
+      <p class="readmore">Readmore</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+    </div>
+
+    <div class="col-7">
+      <hr>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <div class="row">
+      <p class="news-1">
+        <span class="news-1-text1">NEWS • September 26th, 2022</span>
+        <br>
+        <span class="news-1-text2">Wincove Private Holdings, LP Announces Sale of Comstar Technologies, LLC</span>
+      </p>
+      <p class="readmore">Readmore</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+    </div>
+
+    <div class="col-7">
+      <hr>
+    </div>
+    
+  </div>
+
+  <div class="row bottom-fourth">
+    <div class="col align-self-start d-flex linkedin-second">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3.60001 16H0.199997V5.3H3.60001V16ZM1.9 3.8C0.800002 3.8 0 3 0 1.9C0 0.8 0.900002 0 1.9 0C3 0 3.8 0.8 3.8 1.9C3.8 3 3 3.8 1.9 3.8ZM16 16H12.6V10.2C12.6 8.5 11.9 8 10.9 8C9.89999 8 8.89999 8.8 8.89999 10.3V16H5.5V5.3H8.7V6.8C9 6.1 10.2 5 11.9 5C13.8 5 15.8 6.1 15.8 9.4V16H16Z" fill="#6B6B6B"/>
+      </svg>
+    </div>  
+  </div>
+
+
+</div>
+
+<div class="container-fluid fifth-page">
+  <div class="row">
+    <div class="col-1 side-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="43" height="49" viewBox="0 0 43 49" fill="none">
+        <path d="M1.43861 28.0979C-0.128893 28.4786 -0.636472 35.9055 1.04299 42.8622C2.72245 49.8189 7.82055 49.7443 12.105 47.3557C12.8216 46.9601 7.0592 46.2062 5.37228 39.2495C3.69281 32.2928 2.99863 27.7247 1.43114 28.0979H1.43861Z" fill="white"/>
+        <path d="M9.83592 16.2521C7.46228 16.8268 6.44713 27.4261 9.7762 37.7492C13.2247 48.4455 21.5772 44.7059 24.6525 42.489C26.0483 41.4813 21.7937 43.9072 18.3825 35.6741C14.2249 25.6571 12.217 15.6773 9.84338 16.2521H9.83592Z" fill="white"/>
+        <path d="M21.51 0.032207C18.2556 0.815956 16.8747 15.3265 21.4279 29.4564C26.1454 44.0938 37.5806 38.9733 41.783 35.9354C43.6864 34.562 37.8717 37.8686 33.1991 26.605C27.5188 12.9006 24.7645 -0.751542 21.51 0.032207Z" fill="white"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-1">
+      <div class="col-1 sidebar2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="12" viewBox="0 0 25 12" fill="none">
+          <line y1="11" x2="25" y2="11" stroke="white" stroke-width="2"/>
+          <line y1="1" x2="25" y2="1" stroke="white" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="col-5 d-flex flex-column">
+      <p class="signup-p p-2">
+        <span class="signup-text">Sign up for our Newsletter</span>
+      </p>
+
+      <div class="d-flex flex-row mb-3">
+        <div class="p-2 email-form">
+          <span class="email-text">Email Address:</span>
+        </div>
+        <div class="p-2 email-send">Send</div>
+      </div> 
+
+        <p class="email-line">
+        <svg xmlns="http://www.w3.org/2000/svg" width="410" height="1" viewBox="0 0 410 1" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M409.406 0.5H0.594203H409.406Z" fill="#101010"/>
+          <path d="M409.406 0.5H0.594203" stroke="white" stroke-width="0.5" stroke-linecap="square"/>
+        </svg>
+        </p>
+
+        <div class="d-flex flex-row mb-3">
+          <div class="p-2 linkedin-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16ZM8.2 13.3V24H11.6V13.3H8.2ZM8 9.9C8 11 8.8 11.8 9.9 11.8C11 11.8 11.8 11 11.8 9.9C11.8 8.8 11 8 9.9 8C8.9 8 8 8.8 8 9.9ZM20.6 24H23.8V17.4C23.8 14.1 21.8 13 19.9 13C18.2 13 17 14.1 16.7 14.8V13.3H13.5V24H16.9V18.3C16.9 16.8 17.9 16 18.9 16C19.9 16 20.6 16.5 20.6 18.2V24Z" fill="white"/>
+            </svg>
+          </div>
+          <div class="p-2 twitter-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16ZM22.1 11.5C22.8 11.4 23.4 11.3 24 11C23.6 11.7 23 12.3 22.3 12.7C22.5 17.4 19.1 22.5 13 22.5C11.2 22.5 9.5 21.9 8 21C9.7 21.2 11.5 20.7 12.7 19.8C11.2 19.8 10 18.8 9.6 17.5C10.1 17.6 10.6 17.5 11.1 17.4C9.6 17 8.5 15.6 8.5 14.1C9 14.3 9.5 14.5 10 14.5C8.6 13.5 8.1 11.6 9 10.1C10.7 12.1 13.1 13.4 15.8 13.5C15.3 11.5 16.9 9.5 19 9.5C19.9 9.5 20.8 9.9 21.4 10.5C22.2 10.3 22.9 10.1 23.5 9.7C23.3 10.5 22.8 11.1 22.1 11.5Z" fill="#6580B7"/>
+            </svg>
+          </div>
+          <div class="p-2 youtube-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M18.6 16L14.4 13.6V18.4L18.6 16Z" fill="white"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16ZM22.2 10.7C22.9 10.9 23.4 11.4 23.6 12.1C24 13.4 24 16 24 16C24 16 24 18.6 23.7 19.9C23.5 20.6 23 21.1 22.3 21.3C21 21.6 16 21.6 16 21.6C16 21.6 10.9 21.6 9.7 21.3C9 21.1 8.5 20.6 8.3 19.9C8 18.6 8 16 8 16C8 16 8 13.4 8.2 12.1C8.4 11.4 8.90001 10.9 9.60001 10.7C10.9 10.4 15.9 10.4 15.9 10.4C15.9 10.4 21 10.4 22.2 10.7Z" fill="white"/>
+            </svg>
+          </div>
+        </div>
+
+
+    </div>
+
+    <div class="col-2 d-flex flex-column quick-links">
+      <div class="p-2 quick-links-text">Quick Links</div>
+      <div class="p-2 firm-group">Firm</div>
+      <div class="p-2 firm-group">Team</div>
+      <div class="p-2 firm-group">Investments</div>
+      <div class="p-2 firm-group">News</div>
+      <div class="p-2 firm-group">Contact</div>
+    </div>
+
+    <div class="col-3 d-flex flex-column connect-with-us">
+      <div class="p-2 connect-with-us-text">Connect with us</div>
+      <div class="p-2 connect-group">info@wincove.com (212) 360-1904</div>
+      <div class="p-2 connect-group">607 Boylston St Suite 603 Boston, MA 02116</div>
+    </div>
+    
+    
+  </div>
+
+  <div class="bottom-fifth d-flex flex-row">
+    <div class="col-1 align-self-start d-flex linkedin-fifth">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3.60001 16H0.199997V5.3H3.60001V16ZM1.9 3.8C0.800002 3.8 0 3 0 1.9C0 0.8 0.900002 0 1.9 0C3 0 3.8 0.8 3.8 1.9C3.8 3 3 3.8 1.9 3.8ZM16 16H12.6V10.2C12.6 8.5 11.9 8 10.9 8C9.89999 8 8.89999 8.8 8.89999 10.3V16H5.5V5.3H8.7V6.8C9 6.1 10.2 5 11.9 5C13.8 5 15.8 6.1 15.8 9.4V16H16Z" fill="#6B6B6B"/>
+      </svg>
+    </div>
+
+    <div class="col-6 p-2">
+      <p class="credits"> 
+        <span class="credits-text">© 2022 Wincove Private Holdings. All rights reserved.</span> 
+      </p>
+    </div>
+
+    <div class="col p-2">
+      <div class="d-flex flex-row terms-group">
+        <div class="p-2 terms-item">Terms of Use</div>
+        <div class="p-2 terms-item">Risk Disclosure</div>
+        <div class="p-2 terms-item">Privacy Policy</div>
+      </div>
+    </div>
+
+   
+  </div>
+</div>
+
+  
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+</body>
+</html>
+
