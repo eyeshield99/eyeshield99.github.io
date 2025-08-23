@@ -70,6 +70,7 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: shimmer 3s infinite;
+            background-size: 200% 200%;
         }
 
         @keyframes shimmer {
@@ -133,6 +134,8 @@
             padding: 40px;
             margin: 20px 0;
             max-width: 800px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         .timeline-item {
@@ -166,6 +169,9 @@
             min-width: 120px;
             margin: 0 20px;
             box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .timeline-content {
@@ -174,6 +180,28 @@
             padding: 20px;
             border-radius: 15px;
             border-left: 4px solid #ff6b6b;
+        }
+
+        .timeline-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .timeline-content p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .timeline-img {
+            margin-top: 15px;
+            width: 100%;
+            max-width: 250px;
+            max-height: 400px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            object-fit: cover;
         }
 
         .memory-grid {
@@ -304,9 +332,16 @@
             .timeline-item {
                 flex-direction: column !important;
                 text-align: center;
+                transform: translateY(30px) !important;
+            }
+            .timeline-item.visible {
+                transform: translateY(0) !important;
             }
             .timeline-date {
                 margin: 0 0 10px 0;
+            }
+            .nav-dots {
+                display: none;
             }
         }
     </style>
@@ -335,8 +370,8 @@
     <section class="section" id="section-1">
         <div class="card">
             <h2>How We Met 💕</h2>
-            <p>It all started exactly one year ago today. From that very first moment, I knew there was something special about you. Your smile lit up the room, and your laugh became my favorite sound in the world.</p>
-            <p>What began as a chance encounter has blossomed into the most beautiful love story I could have ever imagined. Thank you for saying yes to that first date, and for every day since.</p>
+            <p>It all started on a little yellow app called <strong>Bumble</strong>. Who would have thought that a simple swipe could change our lives forever? 🐝</p>
+            <p>What began as a chance match has blossomed into the most beautiful love story I could have ever imagined. Thank you for swiping right and for every day since. 💛</p>
         </div>
     </section>
 
@@ -346,34 +381,92 @@
             <h2 style="text-align: center; color: #2c3e50; margin-bottom: 40px; font-size: 2.5rem;">Our Journey Together</h2>
             
             <div class="timeline-item">
-                <div class="timeline-date">Month 1</div>
+                <div class="timeline-date">08/26/2024</div>
                 <div class="timeline-content">
-                    <h3>First Steps</h3>
-                    <p>Our first dates, endless conversations, and the butterflies that came with every text message. Remember how nervous we both were?</p>
+                    <h3>The moment we became official!</h3>
+                    <p>On our very first day as a couple, we shared our <strong>first kiss</strong> at the cinema 🎬❤️ — and it was extra special because it was my very first kiss ever.</p>
+                    <img src="assets/img/first-day.jpg" alt="First Date" class="timeline-img">
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-date">Month 3</div>
+                <div class="timeline-date">09/14/2024</div>
                 <div class="timeline-content">
-                    <h3>Getting Closer</h3>
-                    <p>The moment we became official! Late night phone calls, sharing our dreams, and realizing we were falling for each other.</p>
+                    <h3>Our First Pizza Date</h3>
+                    <p>Our very first pizza date 🍕💕 Remember how nervous we were that my brother might see us? Hahaha! That mix of excitement and nervousness made it so unforgettable.</p>
+                    <img src="assets/img/pizza-date.jpg" alt="Our First Pizza Date" class="timeline-img">
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-date">Month 6</div>
+                <div class="timeline-date">10/19/2024</div>
                 <div class="timeline-content">
-                    <h3>Growing Together</h3>
-                    <p>Meeting each other's friends and family, our first trip together, and countless inside jokes that still make us laugh.</p>
+                    <h3>Special First Visits</h3>
+                    <p>My very first visit to your house as your official partner 💕 and also my very first time at the Naliyagan Ground. Both moments felt so special and unforgettable.</p>
+                    <img src="assets/img/naliyagan.jpg" alt="Special First Visits" class="timeline-img">
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-date">Month 9</div>
+                <div class="timeline-date">11/26/2024</div>
                 <div class="timeline-content">
-                    <h3>Deeper Connection</h3>
-                    <p>Supporting each other through challenges, celebrating victories together, and knowing we had found something truly special.</p>
+                    <h3>First Monthsarry together</h3>
+                    <p>Our very first monthsarry together 💖 A simple but super special day, just celebrating "us" for the first time together.</p>
+                    <img src="assets/img/monthsarry.jpg" alt="First Shopping Budol" class="timeline-img">
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">01/07/2025</div>
+                <div class="timeline-content">
+                    <h3>First Trip to Davao Together 🚌🌆</h3>
+                    <p>I’ll never forget how excited we were — and how heavy your bag was 🤣.</p>
+                    <img src="assets/img/davao-trip.jpg" alt="First Trip to Davao Together" class="timeline-img">
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">02/15/2025</div>
+                <div class="timeline-content">
+                    <h3>Our First 3 Days Living Together 🏡💫</h3>
+                    <p>It may have been just a short 3 days, but it felt so special living together — sharing little moments, laughs, and just enjoying being under the same roof. 💕</p>
+                    <img src="assets/img/first-living.jpg" alt="Our First 3 Days Living Together" class="timeline-img">
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">04/04/2025</div>
+                <div class="timeline-content">
+                    <h3>First Studio Pictorial 📸✨ & A Big Congratulations 🎉</h3>
+                    <p>Our very first studio pictorial together — such a fun and unforgettable moment! And of course, the biggest congratulations to you for passing the MedTech board exam 🩺🎓. I’m so proud of you! 💕</p>
+                    <img src="assets/img/studio-pictorial.jpg" alt="First Studio Pictorial and MedTech Board Exam" class="timeline-img">
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">06/12/2025</div>
+                <div class="timeline-content">
+                    <h3>First Naliyagan Festival 🎶🎉</h3>
+                    <p>Our first time experiencing the Naliyagan Festival together — full of music, food, colors, and unforgettable fun! 🌟</p>
+                    <img src="assets/img/first-naliyagan-festival.jpg" alt="First Naliyagan Festival" class="timeline-img">
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">06/29/2025</div>
+                <div class="timeline-content">
+                    <h3>Our First Hotel Together 🏨💖</h3>
+                    <p>Thank you so much for accompanying me to get my CSE eligibility certificate 💼💕 It meant so much having you by my side.</p>
+                    <img src="assets/img/first-hotel.jpg" alt="Our First Hotel Together" class="timeline-img">
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">07/05/2025</div>
+                <div class="timeline-content">
+                    <h3>First Korean Food Trip 🍲🥢</h3>
+                    <p>Our first time trying Korean food together — from fish cake to your tteokbokki, everything was delicious! 🥓🔥 But the best part was sharing it all with you. 💕</p>
+                    <img src="assets/img/first-korean-food.jpg" alt="First Korean Food Trip" class="timeline-img">
                 </div>
             </div>
 
@@ -382,12 +475,13 @@
                 <div class="timeline-content">
                     <h3>One Year Strong</h3>
                     <p>365 days of love, growth, and happiness. Here's to many more years of our beautiful adventure together!</p>
+                    <div style="width: 100%; height: 200px; background: linear-gradient(45deg, #feca57, #ff6b6b); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; margin-top: 15px;">One Year Anniversary 🎉 (Picture to be Added)</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Memories Section -->
+    <!-- Memories Section 
     <section class="section" id="section-3">
         <div class="card">
             <h2>Our Favorite Memories</h2>
@@ -425,6 +519,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- Love Letter Section -->
     <section class="section" id="section-4">
@@ -437,24 +532,24 @@
             <p>Here's to our first year, and to all the beautiful years ahead. I love you more than words could ever express, and I can't wait to see what our future holds.</p>
             <p style="text-align: right; font-style: italic; margin-top: 30px;">Forever yours,<br>❤️</p>
             
-            <button class="btn" onclick="showSurprise()">Click for a Surprise!</button>
+            <!--<button class="btn" onclick="showSurprise()">Click for a Surprise!</button>-->
         </div>
     </section>
 
     <script>
-        // Intersection Observer for scroll animations
+        // Intersection Observer for scroll animations with lower threshold
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                     updateNavDots();
                     
-                    // Animate timeline items
+                    // Animate timeline items with delay
                     const timelineItems = entry.target.querySelectorAll('.timeline-item');
                     timelineItems.forEach((item, index) => {
                         setTimeout(() => {
                             item.classList.add('visible');
-                        }, index * 200);
+                        }, index * 300);
                     });
 
                     // Animate memory cards
@@ -466,12 +561,35 @@
                     });
                 }
             });
-        }, { threshold: 0.3 });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
 
         // Observe all sections
         document.querySelectorAll('.section').forEach(section => {
             observer.observe(section);
         });
+
+        // Alternative approach: trigger timeline animation when section becomes visible
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const timelineItems = entry.target.querySelectorAll('.timeline-item');
+                    timelineItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 200);
+                    });
+                }
+            });
+        }, { threshold: 0.2 });
+
+        // Specifically observe the timeline section
+        const timelineSection = document.getElementById('section-2');
+        if (timelineSection) {
+            timelineObserver.observe(timelineSection);
+        }
 
         // Create floating hearts
         function createHeart() {
@@ -493,9 +611,24 @@
 
         // Smooth scrolling
         function scrollToSection(index) {
-            document.getElementById(`section-${index}`).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const section = document.getElementById(`section-${index}`);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Force animation after scrolling
+                setTimeout(() => {
+                    if (index === 2) { // Timeline section
+                        const timelineItems = section.querySelectorAll('.timeline-item');
+                        timelineItems.forEach((item, itemIndex) => {
+                            setTimeout(() => {
+                                item.classList.add('visible');
+                            }, itemIndex * 200);
+                        });
+                    }
+                }, 500);
+            }
         }
 
         // Update navigation dots
@@ -507,15 +640,16 @@
                 const rect = section.getBoundingClientRect();
                 if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
                     dots.forEach(dot => dot.classList.remove('active'));
-                    dots[index].classList.add('active');
+                    if (dots[index]) {
+                        dots[index].classList.add('active');
+                    }
                 }
             });
         }
 
         // Love counter
         function updateLoveCounter() {
-            const startDate = new Date();
-            startDate.setFullYear(startDate.getFullYear() - 1);
+            const startDate = new Date('2024-08-26'); // Set your actual anniversary date
             const now = new Date();
             const timeDiff = now - startDate;
             
@@ -523,8 +657,10 @@
             const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
             
-            document.getElementById('loveCounter').innerHTML = 
-                `${days} days, ${hours} hours, ${minutes} minutes of love`;
+            const counter = document.getElementById('loveCounter');
+            if (counter) {
+                counter.innerHTML = `${days} days, ${hours} hours, ${minutes} minutes of love`;
+            }
         }
 
         // Memory interaction
@@ -609,19 +745,15 @@
             setTimeout(createHeart, i * 1000);
         }
 
-        // Add click handlers for smooth navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add smooth scrolling to any anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
+        // Fallback: Force timeline animation on page load after delay
+        setTimeout(() => {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, index * 200);
             });
-        });
+        }, 2000);
     </script>
 </body>
 </html>
