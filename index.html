@@ -3,1166 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Celebrate your love story with a beautiful anniversary countdown">
   <title>LoveStory Pro - Premium Anniversary Template</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    :root {
-      /* Theme Colors - Easily customizable */
-      --theme-primary: #6366f1;
-      --theme-secondary: #ec4899;
-      --theme-accent: #14b8a6;
-      --theme-background: #0f0f23;
-      --theme-surface: rgba(255, 255, 255, 0.05);
-      --theme-glass: rgba(255, 255, 255, 0.1);
-      --theme-text: #ffffff;
-      --theme-text-muted: rgba(255, 255, 255, 0.7);
-      --theme-gradient: linear-gradient(135deg, var(--theme-primary), var(--theme-secondary));
-    }
-    
-    /* Theme Variations */
-    [data-theme="romantic"] {
-      --theme-primary: #ff6b9d;
-      --theme-secondary: #c44569;
-      --theme-accent: #f8b500;
-      --theme-background: #2d1b2e;
-    }
-    
-    [data-theme="elegant"] {
-      --theme-primary: #d4af37;
-      --theme-secondary: #b8860b;
-      --theme-accent: #ffd700;
-      --theme-background: #1a1a1a;
-    }
-    
-    [data-theme="ocean"] {
-      --theme-primary: #4facfe;
-      --theme-secondary: #00f2fe;
-      --theme-accent: #4facfe;
-      --theme-background: #0c1633;
-    }
-    
-    [data-theme="sunset"] {
-      --theme-primary: #ff6b35;
-      --theme-secondary: #f7931e;
-      --theme-accent: #ffcc02;
-      --theme-background: #2d1810;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: var(--theme-background);
-      color: var(--theme-text);
-      overflow-x: hidden;
-      line-height: 1.6;
-      position: relative;
-    }
-    
-    /* Admin Panel Styles */
-    .admin-panel {
-      position: fixed;
-      top: 0;
-      right: -350px;
-      width: 350px;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(20px);
-      border-left: 1px solid rgba(255, 255, 255, 0.1);
-      z-index: 10000;
-      transition: right 0.3s ease;
-      padding: 2rem;
-      overflow-y: auto;
-    }
-    
-    .admin-panel.open {
-      right: 0;
-    }
-    
-    .admin-toggle {
-      position: fixed;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      background: var(--theme-primary);
-      color: white;
-      border: none;
-      padding: 1rem;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 9999;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
-    }
-    
-    .admin-toggle:hover {
-      transform: translateY(-50%) scale(1.1);
-    }
-    
-    .admin-section {
-      margin-bottom: 2rem;
-    }
-    
-    .admin-section h3 {
-      color: var(--theme-primary);
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-    
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--theme-text-muted);
-    }
-    
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 0.75rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      color: white;
-      font-size: 0.9rem;
-    }
-    
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: var(--theme-primary);
-    }
-    
-    .theme-selector {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-    
-    .theme-option {
-      padding: 0.75rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      cursor: pointer;
-      text-align: center;
-      font-size: 0.8rem;
-      transition: all 0.3s ease;
-    }
-    
-    .theme-option.active {
-      background: var(--theme-primary);
-      color: white;
-    }
-    
-    .btn-admin {
-      width: 100%;
-      padding: 0.75rem;
-      background: var(--theme-primary);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      margin-top: 1rem;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-admin:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Animated Background */
-    .bg-animation {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      background: var(--theme-background);
-    }
-    
-    .bg-animation::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-                  radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
-      animation: backgroundShift 10s ease-in-out infinite;
-    }
-    
-    @keyframes backgroundShift {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-    
-    /* Floating particles */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-    
-    .particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      animation: float 6s infinite linear;
-    }
-    
-    @keyframes float {
-      0% { transform: translateY(100vh) scale(0); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-100vh) scale(1); opacity: 0; }
-    }
-    
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      backdrop-filter: blur(20px);
-      background: rgba(15, 15, 35, 0.8);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-    
-    nav.scrolled {
-      background: rgba(15, 15, 35, 0.95);
-    }
-    
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      background: var(--theme-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    
-    .nav-links a {
-      color: var(--theme-text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    
-    .nav-links a:hover {
-      color: var(--theme-text);
-    }
-    
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--theme-gradient);
-      transition: width 0.3s ease;
-    }
-    
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-    
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 2rem;
-      z-index: 2;
-    }
-    
-    .hero-content {
-      text-align: center;
-      max-width: 800px;
-      position: relative;
-    }
-    
-    .hero-badge {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: var(--theme-glass);
-      backdrop-filter: blur(10px);
-      border-radius: 50px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 2rem;
-      animation: fadeInUp 1s ease 0.2s both;
-    }
-    
-    .hero-title {
-      font-size: clamp(3rem, 8vw, 7rem);
-      font-weight: 900;
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-      background: linear-gradient(135deg, #ffffff 0%, var(--theme-primary) 50%, var(--theme-secondary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeInUp 1s ease 0.4s both;
-      font-family: 'Playfair Display', serif;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.5rem;
-      color: var(--theme-text-muted);
-      margin-bottom: 3rem;
-      font-weight: 300;
-      animation: fadeInUp 1s ease 0.6s both;
-    }
-    
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      animation: fadeInUp 1s ease 0.8s both;
-    }
-    
-    .btn {
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .btn-primary {
-      background: var(--theme-gradient);
-      color: white;
-      box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 50px rgba(99, 102, 241, 0.5);
-    }
-    
-    .btn-secondary {
-      background: var(--theme-glass);
-      color: var(--theme-text);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-3px);
-    }
-    
-    /* Countdown Section */
-    .countdown-section {
-      padding: 8rem 2rem;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-    
-    .section-badge {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: var(--theme-glass);
-      backdrop-filter: blur(10px);
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin-bottom: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .section-title {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 800;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--theme-primary), var(--theme-accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-family: 'Playfair Display', serif;
-    }
-    
-    .section-description {
-      font-size: 1.2rem;
-      color: var(--theme-text-muted);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    .countdown-container {
-      background: var(--theme-surface);
-      backdrop-filter: blur(30px);
-      border-radius: 24px;
-      padding: 3rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .countdown-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--theme-primary), transparent);
-    }
-    
-    .countdown-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 2rem;
-    }
-    
-    .countdown-item {
-      text-align: center;
-      position: relative;
-    }
-    
-    .countdown-number {
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1;
-      background: linear-gradient(135deg, #ffffff, var(--theme-primary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    
-    .countdown-label {
-      font-size: 0.9rem;
-      color: var(--theme-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 500;
-    }
-    
-    /* Gallery Section - Carousel */
-    .gallery-section {
-      padding: 8rem 2rem;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .carousel-container {
-      position: relative;
-      max-width: 800px;
-      margin: 4rem auto 0;
-      overflow: hidden;
-      border-radius: 24px;
-      background: var(--theme-surface);
-      backdrop-filter: blur(30px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-    
-    .carousel-wrapper {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-    
-    .gallery-item {
-      min-width: 100%;
-      height: 500px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .gallery-image {
-      width: 100%;
-      height: 70%;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .gallery-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    
-    .gallery-content {
-      padding: 1.5rem;
-      height: 30%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-    }
-    
-    .gallery-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    
-    .gallery-description {
-      color: var(--theme-text-muted);
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    
-    /* Carousel Navigation */
-    .carousel-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .carousel-nav:hover {
-      background: rgba(0, 0, 0, 0.8);
-      transform: translateY(-50%) scale(1.1);
-    }
-    
-    .carousel-prev {
-      left: 20px;
-    }
-    
-    .carousel-next {
-      right: 20px;
-    }
-    
-    /* Carousel Dots */
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 1.5rem;
-      background: rgba(0, 0, 0, 0.2);
-    }
-    
-    .carousel-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.4);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .carousel-dot.active {
-      background: var(--theme-primary);
-      transform: scale(1.2);
-    }
-    
-    .carousel-dot:hover {
-      background: rgba(255, 255, 255, 0.8);
-    }
-    
-    /* Footer */
-    .footer {
-      padding: 4rem 2rem;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(20px);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      position: relative;
-      z-index: 2;
-    }
-    
-    .footer-quote {
-      font-size: 1.8rem;
-      font-style: italic;
-      margin-bottom: 2rem;
-      color: var(--theme-text-muted);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      font-family: 'Playfair Display', serif;
-    }
-    
-    .footer-hearts {
-      font-size: 2rem;
-      margin: 2rem 0;
-      animation: pulse 2s ease-in-out infinite;
-    }
-    
-    .watermark {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      color: var(--theme-text-muted);
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-    }
-    
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-    
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .modal-content {
-      background: var(--theme-glass);
-      backdrop-filter: blur(30px);
-      border-radius: 20px;
-      padding: 3rem;
-      max-width: 500px;
-      width: 90%;
-      text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      position: relative;
-    }
-    
-    .modal-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--theme-text-muted);
-      transition: color 0.3s ease;
-    }
-    
-    .modal-close:hover {
-      color: var(--theme-text);
-    }
-    
-    /* Export/Download Features */
-    .export-section {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-    
-    .export-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .admin-panel {
-        width: 100%;
-        right: -100%;
-      }
-      .nav-links {
-        display: none;
-      }
-      .hero-cta {
-        flex-direction: column;
-        align-items: center;
-      }
-      .countdown-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-      }
-      .countdown-number {
-        font-size: 2.5rem;
-      }
-      .carousel-container {
-        margin: 2rem auto 0;
-      }
-      .carousel-nav {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-      }
-      .carousel-prev {
-        left: 10px;
-      }
-      .carousel-next {
-        right: 10px;
-      }
-    }
-  </style>
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body data-theme="modern">
   <div class="bg-animation"></div>
-  <div class="particles" id="particles"></div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
 
-  <!-- Admin Panel -->
-  <button class="admin-toggle" onclick="toggleAdmin()" title="Customize Template">⚙️</button>
-  <div class="admin-panel" id="adminPanel">
-    <span style="cursor:pointer;position:absolute;top:15px;right:20px;font-size:1.5rem;color:var(--theme-text-muted);" onclick="toggleAdmin()">✖</span>
+  <button class="admin-toggle" onclick="app.toggleAdmin()" aria-label="Open customizer panel" aria-controls="adminPanel">⚙️</button>
+  
+  <aside class="admin-panel" id="adminPanel" aria-label="Template customizer">
+    <button class="admin-close" onclick="app.toggleAdmin()" aria-label="Close customizer">&times;</button>
     <h2 style="color: var(--theme-primary); margin-bottom: 2rem;">🎨 Template Customizer</h2>
     
-    <div class="admin-section">
+    <section class="admin-section">
       <h3>🎭 Theme Selection</h3>
-      <div class="theme-selector">
-        <div class="theme-option active" data-theme="modern">Modern</div>
-        <div class="theme-option" data-theme="romantic">Romantic</div>
-        <div class="theme-option" data-theme="elegant">Elegant</div>
-        <div class="theme-option" data-theme="ocean">Ocean</div>
+      <div class="theme-selector" role="group" aria-label="Theme options">
+        <button class="theme-option active" data-theme="modern" onclick="app.changeTheme('modern')">Modern</button>
+        <button class="theme-option" data-theme="romantic" onclick="app.changeTheme('romantic')">Romantic</button>
+        <button class="theme-option" data-theme="elegant" onclick="app.changeTheme('elegant')">Elegant</button>
+        <button class="theme-option" data-theme="ocean" onclick="app.changeTheme('ocean')">Ocean</button>
       </div>
-    </div>
+    </section>
     
-    <div class="admin-section">
+    <section class="admin-section">
       <h3>💑 Couple Information</h3>
       <div class="form-group">
-        <label>Partner 1 Name:</label>
-        <input type="text" id="partner1" value="Sarah" onchange="updateNames()">
+        <label for="partner1">Partner 1 Name:</label>
+        <input type="text" id="partner1" value="Sarah" aria-label="Partner 1 name">
       </div>
       <div class="form-group">
-        <label>Partner 2 Name:</label>
-        <input type="text" id="partner2" value="Michael" onchange="updateNames()">
+        <label for="partner2">Partner 2 Name:</label>
+        <input type="text" id="partner2" value="Michael" aria-label="Partner 2 name">
       </div>
       <div class="form-group">
-        <label>Relationship Start Date:</label>
-        <input type="date" id="startDate" value="2020-03-15" onchange="updateDates()">
+        <label for="startDate">Relationship Start Date:</label>
+        <input type="date" id="startDate" value="2020-03-15" aria-label="Relationship start date">
       </div>
       <div class="form-group">
-        <label>Next Anniversary Date:</label>
-        <input type="date" id="anniversaryDate" value="2026-03-15" onchange="updateCountdown()">
+        <label for="anniversaryDate">Next Anniversary Date:</label>
+        <input type="date" id="anniversaryDate" value="2026-03-15" aria-label="Next anniversary date">
       </div>
-    </div>
+    </section>
     
-    <div class="admin-section">
+    <section class="admin-section">
       <h3>📝 Content</h3>
       <div class="form-group">
-        <label>Hero Subtitle:</label>
-        <input type="text" id="heroSubtitle" value="A love story written in the stars" onchange="updateContent()">
+        <label for="heroSubtitle">Hero Subtitle:</label>
+        <input type="text" id="heroSubtitle" value="A love story written in the stars" aria-label="Hero subtitle text">
       </div>
       <div class="form-group">
-        <label>Love Quote:</label>
-        <textarea id="loveQuote" rows="3" onchange="updateContent()">In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine.</textarea>
+        <label for="loveQuote">Love Quote:</label>
+        <textarea id="loveQuote" rows="3" aria-label="Love quote">In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine.</textarea>
       </div>
-    </div>
+    </section>
     
-    <div class="admin-section">
-      <h3>🖼️ Images</h3>
+    <section class="admin-section">
+      <h3>🖼️ Stories</h3>
       <div class="form-group">
-        <label>Upload Photo 1:</label>
-        <input type="file" accept="image/*" onchange="handleImageUpload(this, 0)">
+        <label for="storyImageUpload">Add New Story Image (URL or File):</label>
+        <input type="text" id="storyImageURL" placeholder="Image URL (e.g., Unsplash, Imgur)" aria-label="Image URL">
+        <input type="file" accept="image/*" id="storyImageUpload" aria-label="Upload story image">
       </div>
       <div class="form-group">
-        <label>Upload Photo 2:</label>
-        <input type="file" accept="image/*" onchange="handleImageUpload(this, 1)">
+        <label for="storyTitle">Story Title:</label>
+        <input type="text" id="storyTitle" placeholder="Enter story title" aria-label="Story title">
       </div>
       <div class="form-group">
-        <label>Upload Photo 3:</label>
-        <input type="file" accept="image/*" onchange="handleImageUpload(this, 2)">
+        <label for="storyDate">Story Date:</label>
+        <input type="date" id="storyDate" aria-label="Story date">
       </div>
-    </div>
+      <div class="form-group">
+        <label for="storyDescription">Story Description:</label>
+        <textarea id="storyDescription" rows="3" placeholder="Enter story description" aria-label="Story description"></textarea>
+      </div>
+      <button class="btn-admin" onclick="app.addStory()">➕ Add Story</button>
+    </section>
     
-    <div class="export-section">
+    <section class="admin-section">
       <h3>📦 Export Options</h3>
-      <div class="export-buttons">
-        <button class="btn-admin" onclick="exportHTML()">📄 Download HTML</button>
-        <button class="btn-admin" onclick="exportPDF()">📋 Generate PDF</button>
-        <button class="btn-admin" onclick="shareLink()">🔗 Generate Share Link</button>
-      </div>
-    </div>
+      <button class="btn-admin" onclick="app.exportHTML()">📄 Download HTML</button>
+      <button class="btn-admin" onclick="app.shareLink()">🔗 Generate Share Link</button>
+    </section>
     
-    <div class="admin-section">
-      <button class="btn-admin" onclick="resetToDefault()">🔄 Reset to Default</button>
-      <button class="btn-admin" onclick="previewMode()">👀 Preview Mode</button>
-    </div>
-  </div>
+    <section class="admin-section">
+      <button class="btn-admin" onclick="app.resetToDefault()">🔄 Reset to Default</button>
+    </section>
+  </aside>
 
-  <!-- Navbar -->
   <nav id="navbar">
     <div class="nav-container">
       <div class="logo" id="logoText">S & M</div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#countdown">Countdown</a></li>
-        <li><a href="#memories">Memories</a></li>
+        <li><a href="#stories">Memories</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <div class="hero-badge" id="heroBadge">✨ Together Since 2020</div>
-      <h1 class="hero-title" id="heroTitle">Sarah & Michael</h1>
-      <p class="hero-subtitle" id="heroSubtitleText">A love story written in the stars</p>
-      <div class="hero-cta">
-        <a href="#countdown" class="btn btn-primary">💖 See Our Journey</a>
-        <a href="#memories" class="btn btn-secondary">📸 View Memories</a>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-badge" id="heroBadge">✨ Together Since 2020</div>
+        <h1 class="hero-title" id="heroTitle">Sarah & Michael</h1>
+        <p class="hero-subtitle" id="heroSubtitleText">A love story written in the stars</p>
+        <div class="hero-cta">
+          <a href="#countdown" class="btn btn-primary">💖 See Our Journey</a>
+          <a href="#stories" class="btn btn-secondary">📸 View Memories</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Countdown -->
-  <section id="countdown" class="countdown-section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-badge">⏳ Countdown</div>
-        <h2 class="section-title">Next Anniversary</h2>
-        <p class="section-description">Counting the days until we celebrate our special moment together again.</p>
-      </div>
-      <div class="countdown-container">
-        <div class="countdown-grid" id="countdownGrid">
-          <div class="countdown-item">
-            <span class="countdown-number" id="days">0</span>
-            <span class="countdown-label">Days</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="hours">0</span>
-            <span class="countdown-label">Hours</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="minutes">0</span>
-            <span class="countdown-label">Minutes</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="seconds">0</span>
-            <span class="countdown-label">Seconds</span>
+    <section id="countdown" class="countdown-section" aria-labelledby="countdown-title">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-badge">⏳ Countdown</div>
+          <h2 class="section-title" id="countdown-title">Next Anniversary</h2>
+          <p class="section-description">Counting the days until we celebrate our special moment together again.</p>
+        </header>
+        <div class="countdown-container">
+          <div class="countdown-grid" role="timer" aria-live="polite">
+            <div class="countdown-item">
+              <span class="countdown-number" id="days" aria-label="Days">0</span>
+              <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="hours" aria-label="Hours">0</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="minutes" aria-label="Minutes">0</span>
+              <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="seconds" aria-label="Seconds">0</span>
+              <span class="countdown-label">Seconds</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Gallery Carousel -->
-  <section id="memories" class="gallery-section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-badge">📸 Gallery</div>
-        <h2 class="section-title">Our Memories</h2>
-        <p class="section-description">A glimpse into the beautiful journey we've shared together.</p>
-      </div>
-      
-      <div class="carousel-container">
-        <div class="carousel-wrapper" id="carouselWrapper">
-          <div class="gallery-item">
-            <div class="gallery-image"><img src="https://images.unsplash.com/photo-1529636849874-e6774cf19564?w=800&h=400&fit=crop" alt="Memory 1"></div>
-            <div class="gallery-content">
-              <h3 class="gallery-title">First Date</h3>
-              <p class="gallery-description">The magical evening when it all began. Every love story has a beginning, and ours started with a simple coffee that turned into hours of conversation.</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-image"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=400&fit=crop" alt="Memory 2"></div>
-            <div class="gallery-content">
-              <h3 class="gallery-title">Travel Together</h3>
-              <p class="gallery-description">Exploring the world hand in hand. From mountain tops to ocean shores, we've discovered that the best adventures are the ones we share together.</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-image"><img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=400&fit=crop" alt="Memory 3"></div>
-            <div class="gallery-content">
-              <h3 class="gallery-title">Special Moments</h3>
-              <p class="gallery-description">Cherished memories forever in our hearts. The quiet moments, the laughter, the tears of joy - these are the treasures that make our love story unique.</p>
-            </div>
-          </div>
-        </div>
+    <section id="stories" class="stories-section" aria-labelledby="stories-title">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-badge">📸 Memories</div>
+          <h2 class="section-title" id="stories-title">Our Story</h2>
+          <p class="section-description">A collection of our most cherished moments together.</p>
+        </header>
         
-        <button class="carousel-nav carousel-prev" onclick="previousSlide()">❮</button>
-        <button class="carousel-nav carousel-next" onclick="nextSlide()">❯</button>
-        
-        <div class="carousel-dots">
-          <div class="carousel-dot active" onclick="currentSlide(1)"></div>
-          <div class="carousel-dot" onclick="currentSlide(2)"></div>
-          <div class="carousel-dot" onclick="currentSlide(3)"></div>
+        <div class="stories-container">
+          <button class="scroll-btn scroll-left" onclick="app.scrollStories(-1)" aria-label="Scroll stories left">❮</button>
+          <div class="stories-scroll" id="storiesScroll" role="list">
+            <div class="story-item add-story" onclick="app.openStoryUpload()" role="button" tabindex="0" onkeypress="app.handleStoryKeypress(event)">
+              <div class="story-avatar">
+                <div class="add-story-icon">+</div>
+              </div>
+              <div class="story-title">Add Memory</div>
+            </div>
+            </div>
+          <button class="scroll-btn scroll-right" onclick="app.scrollStories(1)" aria-label="Scroll stories right">❯</button>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Footer -->
+  <div class="story-modal" id="storyModal" role="dialog" aria-modal="true" aria-labelledby="storyModalTitle">
+    <div class="story-modal-content">
+      <button class="story-modal-close" onclick="app.closeStoryModal()" aria-label="Close story">&times;</button>
+      <img class="story-modal-image" id="storyModalImage" src="" alt="">
+      <h3 class="story-modal-title" id="storyModalTitle">Story Title</h3>
+      <div class="story-modal-date" id="storyModalDate">Date</div>
+      <p class="story-modal-description" id="storyModalDescription">Story description goes here.</p>
+    </div>
+  </div>
+
   <footer class="footer">
     <p class="footer-quote" id="footerQuote">
       In all the world, there is no heart for me like yours. 
       In all the world, there is no love for you like mine.
     </p>
-    <div class="footer-hearts">❤️❤️❤️</div>
+    <div class="footer-hearts" aria-hidden="true">❤️❤️❤️</div>
     <p id="footerNames">Sarah & Michael — Together Since 2020</p>
   </footer>
 
-  <!-- Watermark -->
-  <div class="watermark">Made with 💜 using LoveStory Pro</div>
+  <div class="watermark" aria-hidden="true">Made with 💜 using LoveStory Pro</div>
 
-  <!-- Modal -->
-  <div class="modal" id="previewModal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeModal()">&times;</span>
-      <h2>Preview Mode</h2>
-      <p>You are now previewing your customized template.</p>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script>
-    // Navbar scroll effect
-    window.addEventListener("scroll", () => {
-      const navbar = document.getElementById("navbar");
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-    });
-
-    // Admin panel toggle
-    function toggleAdmin() {
-      document.getElementById("adminPanel").classList.toggle("open");
-    }
-
-    // Update names
-    function updateNames() {
-      const partner1 = document.getElementById("partner1").value;
-      const partner2 = document.getElementById("partner2").value;
-      const startDate = document.getElementById("startDate").value;
-
-      // Update hero
-      document.getElementById("heroTitle").textContent = `${partner1} & ${partner2}`;
-      document.getElementById("logoText").textContent = `${partner1[0]} & ${partner2[0]}`;
-      document.getElementById("heroBadge").textContent = `✨ Together Since ${new Date(startDate).getFullYear()}`;
-    
-      // Update footer
-      document.getElementById("footerNames").textContent = `${partner1} & ${partner2} — Together Since ${new Date(startDate).getFullYear()}`;
-    }
-
-    // Update content
-    function updateContent() {
-      const heroSubtitle = document.getElementById("heroSubtitle").value;
-      const loveQuote = document.getElementById("loveQuote").value;
-
-      // Update hero section
-      document.getElementById("heroSubtitleText").textContent = heroSubtitle;
-        
-      // Update footer
-      document.getElementById("footerQuote").textContent = loveQuote;
-    }
-
-    // Update dates and countdown
-    let anniversaryDate = new Date(document.getElementById("anniversaryDate").value);
-    function updateDates() {
-      const startDate = new Date(document.getElementById("startDate").value);
-      document.getElementById("heroBadge").textContent = "✨ Together Since " + startDate.getFullYear();
-    }
-    function updateCountdown() {
-      anniversaryDate = new Date(document.getElementById("anniversaryDate").value);
-    }
-    setInterval(() => {
-      const now = new Date();
-      const diff = anniversaryDate - now;
-      if (diff <= 0) return;
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-      document.getElementById("days").textContent = days;
-      document.getElementById("hours").textContent = hours;
-      document.getElementById("minutes").textContent = minutes;
-      document.getElementById("seconds").textContent = seconds;
-    }, 1000);
-
-    // Theme switcher
-    document.querySelectorAll(".theme-option").forEach(opt => {
-      opt.addEventListener("click", () => {
-        document.body.setAttribute("data-theme", opt.getAttribute("data-theme"));
-        document.querySelectorAll(".theme-option").forEach(o => o.classList.remove("active"));
-        opt.classList.add("active");
-      });
-    });
-
-    // Image upload
-    function handleImageUpload(input, index) {
-      const file = input.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = e => {
-          const images = document.querySelectorAll(".gallery-image img");
-          if (images[index]) {
-            images[index].src = e.target.result;
-          }
-        };
-        reader.readAsDataURL(file);
-      }
-    }
-
-    // Carousel functionality
-    let currentSlideIndex = 0;
-    const totalSlides = 3;
-
-    function updateCarousel() {
-      const wrapper = document.getElementById('carouselWrapper');
-      const dots = document.querySelectorAll('.carousel-dot');
-      
-      wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-      
-      // Update dots
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlideIndex);
-      });
-    }
-
-    function nextSlide() {
-      currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
-      updateCarousel();
-    }
-
-    function previousSlide() {
-      currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
-      updateCarousel();
-    }
-
-    function currentSlide(index) {
-      currentSlideIndex = index - 1;
-      updateCarousel();
-    }
-
-    // Auto-advance carousel every 5 seconds
-    setInterval(nextSlide, 5000);
-
-    // Modal Preview
-    function previewMode() {
-      document.getElementById("previewModal").style.display = "flex";
-    }
-    function closeModal() {
-      document.getElementById("previewModal").style.display = "none";
-    }
-
-    // Reset
-    function resetToDefault() {
-      location.reload();
-    }
-
-    // Export (basic) - excludes admin panel
-    function exportHTML() {
-      // Clone the document to avoid modifying the original
-      const clone = document.documentElement.cloneNode(true);
-      
-      // Remove admin panel elements
-      const adminPanel = clone.querySelector('.admin-panel');
-      const adminToggle = clone.querySelector('.admin-toggle');
-      
-      if (adminPanel) adminPanel.remove();
-      if (adminToggle) adminToggle.remove();
-      
-      // Create the HTML content
-      const htmlContent = '<!DOCTYPE html>\n' + clone.outerHTML;
-      
-      const blob = new Blob([htmlContent], { type: "text/html" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "LoveStory.html";
-      link.click();
-    }
-    
-    function exportPDF() {
-      alert("PDF export requires server-side support or a library like jsPDF.");
-    }
-    function shareLink() {
-      alert("Share link generation requires server-side integration.");
-    }
-
-    // Floating particles
-    const particlesContainer = document.getElementById("particles");
-    for (let i = 0; i < 50; i++) {
-      const particle = document.createElement("div");
-      particle.classList.add("particle");
-      particle.style.left = Math.random() * 100 + "vw";
-      particle.style.animationDuration = (4 + Math.random() * 6) + "s";
-      particle.style.opacity = Math.random();
-      particlesContainer.appendChild(particle);
-    }
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
